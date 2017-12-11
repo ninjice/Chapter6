@@ -6,7 +6,7 @@ public class ArrayPractice
         double finalAverage;
         int numColumns = nums[0].length;
         double[] averages = new double[nums.length];
-        double tempAverage = 0;
+        double tempAverage;
         
         for (int i = 0; i < nums.length; i ++){
             tempAverage = nums[i][0];
@@ -16,11 +16,12 @@ public class ArrayPractice
             averages[i] = tempAverage / 4;
         }
         
-        for (int k = 1; k < averages.length; k ++){
+        while (true){
             tempAverage = averages[0];
-            tempAverage += averages[k];
+            for (int k = 1; k < averages.length; k ++){
+                tempAverage += averages[k];
+            }
+            return (tempAverage / averages.length);
         }
-        System.out.println(tempAverage / averages.length);
-        return(1.1);
     }
 }
