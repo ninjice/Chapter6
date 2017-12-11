@@ -52,13 +52,21 @@ public class IntegerList{
     //-------------------------------------------------------
     public void selectionSort()
     {
-        int minIndex;
+        int minIndex = 0;
+        int temp;
         for (int i=0; i < list.length-1; i++)
             {
                 //find smallest element in list starting at location i
-                
-                //swap list[i] with smallest element
-                
+                if (list[i] < minIndex){
+                    //swap list[i] with smallest element
+                    temp = list[i];
+                    list[i] = list[minIndex];
+                    list[minIndex] = temp;
+                    minIndex = i;
+                }
+                }       
             }
     }
-}
+
+
+ 
