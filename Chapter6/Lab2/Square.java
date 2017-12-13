@@ -63,9 +63,8 @@ public class Square
 
     {
         int sum = 0; 
-        for (int index = 0; index < (size); index ++){
+        for (int index = 0; index < size; index ++){
             sum += square[index][index];
-            
         }
         return sum;
 
@@ -78,9 +77,11 @@ public class Square
     public int sumOtherDiag()
 
     {
-
-        return 0;
-
+        int sum = 0; 
+        for (int index = size; index > 0; index --){
+            sum += square[index][index];
+        }
+        return sum;
     }
 
     //--------------------------------------
@@ -93,7 +94,13 @@ public class Square
     {
 
         //Change to work correctly
-
+        int[] temp = new int[size * 2 + 2];
+        for (int i = 0; i < size; i ++){
+            if (i < size){
+                temp[i] = sumRow(i);
+            }
+            
+        }
         return false;
 
     }
