@@ -22,13 +22,14 @@ public class SquareTester
        
 
         //Magic
-
+        
         int[][] sq1 = {{8, 1, 6},
 
                         {3, 5, 7},
 
                         {4, 9, 2}};
-
+                       
+        Square test1 = new Square(3) 
                        
 
         int[][] sq2 = { {30, 39, 48, 1, 10, 19, 28},
@@ -128,8 +129,6 @@ public class SquareTester
        
 
     }
-
-
 }
 
 

@@ -95,14 +95,27 @@ public class Square
 
         //Change to work correctly
         int[] temp = new int[size * 2 + 2];
-        for (int i = 0; i < size; i ++){
-            if (i < size){
+        
+        for (int i = 0; i < temp.length; i ++){
+            if (i <= size){
                 temp[i] = sumRow(i);
             }
-            
+            if ((i > size) && (i <= size * 2)){
+                temp[i] = sumCol(i);
+            }
+            if (i > size * 2){
+                temp[i] = sumMainDiag();
+                temp[i + 2] = sumOtherDiag();
+            }
         }
-        return false;
-
+        
+        for (int i : temp){
+            if (i != temp[0]){
+                return false;
+            }
+        }
+        
+        return true;
     }
 
     //--------------------------------------
