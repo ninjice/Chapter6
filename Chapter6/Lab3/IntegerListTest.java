@@ -118,12 +118,6 @@ public class IntegerListTest{
 
                 break;
             
-            //case 5:
-                
-            //    list.increaseSize();
-                
-            //    break;
-            
             case 5 :
             
                 System.out.println("What element would you like to add?");    
@@ -131,7 +125,11 @@ public class IntegerListTest{
                 list.addElement(scan.nextInt());
                 
                 break;
+            
+            case 6:
+                System.out.println("Which element would you like to remove?");
                 
+                list.removeFirst(scan.nextInt());
             default:
 
                 System.out.println("Sorry, invalid choice");
@@ -166,10 +164,9 @@ public class IntegerListTest{
 
         System.out.println("4: Print the list");
         
-        //System.out.println("5: Double the length of the list");
-        
         System.out.println("5: Add a new element to the list");
         
+        System.out.println("6: Remove an element from the list");
         System.out.print("\nEnter your choice: ");
 
     }

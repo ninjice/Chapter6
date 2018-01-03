@@ -164,13 +164,13 @@ public class IntegerList{
         int index = search(newVal);
         if (index != -1){
             list[index] = 0;
-        }
-        
-        for (int i = index + 1; i < list.length; i ++){
-            
+            for (int i = index; i < list.length; i ++){
+               list[index] = list[index + 1];
+            }
         }
         
     }
+    
 }
 
 
