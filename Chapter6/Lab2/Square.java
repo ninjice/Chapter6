@@ -48,7 +48,7 @@ public class Square
 
     {
         int sum = 0;
-        for (int n = 0; n < (size); n ++){
+        for (int n = 0; n < size; n++){
             sum += square[n][col];
         }
         
@@ -78,8 +78,12 @@ public class Square
 
     {
         int sum = 0; 
-        for (int index = size; index > 0; index --){
-            sum += square[index][index];
+        int index = 0;
+        for (int i = size; i >= 0; i--){
+            
+            
+            sum += square[index][i];
+            index += 1;
         }
         return sum;
     }
@@ -96,11 +100,11 @@ public class Square
         int test = sumRow(0);
         int[] temp = new int[size * 2 + 2];
         //saves the sum of each row
-        for (int i = 0; i < size; i ++){
+        for (int i = 0; i < size; i++){
             temp[i] = sumRow(i);
         }
         //saves the sum of each column
-        for (int j = 0; j < size * 2; j ++){
+        for (int j = 0; j < size; j++){
             temp[j + size] = sumCol(j);
         }
         
