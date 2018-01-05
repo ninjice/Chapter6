@@ -96,27 +96,27 @@ public class Square
     public boolean magic()
 
     {
-        //sets a value to test
-        int test = sumRow(0);
+
+        //Change to work correctly
         int[] temp = new int[size * 2 + 2];
-        //saves the sum of each row
-        for (int i = 0; i < size; i++){
-            temp[i] = sumRow(i);
-        }
-        //saves the sum of each column
-        for (int j = 0; j < size; j++){
-            temp[j + size] = sumCol(j);
+        
+        for (int i = 0; i < temp.length; i ++){
+            if (i <= size){
+                temp[i] = sumRow(i);
+            }
+            if ((i > size) && (i <= size * 2)){
+                temp[i] = sumCol(i);
+            }
+            if (i > size * 2){
+                temp[i] = sumMainDiag();
+                temp[i + 2] = sumOtherDiag();
+            }
         }
         
-        //saves the sums of the diagonals
-        temp[size * 2 + 1] = sumMainDiag();
-        temp[size * 2 + 1] = sumOtherDiag();
-        
-        //tests the set value against each sum of the square
-        for (int k : temp){
-            if (k != test){
+        for (int i : temp){
+            if (i != temp[0]){
                 return false;
-            } 
+            }
         }
         
         return true;
